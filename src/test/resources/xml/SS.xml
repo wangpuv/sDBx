@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdbx>
+    <type>SS</type>
+    <province>100</province>
+    <createtime>2011-04-25T06:16:20</createtime>
+    <sum>1</sum>
+    <begintime>2011-03-01T00:00:00</begintime>
+    <endtime>2011-04-01T00:00:00</endtime>
+    <data>
+        <rcd>
+            <seq>1</seq>
+            <mainacc>2</mainacc>
+            <mainid>2</mainid>
+            <subacc>2</subacc>
+            <subid>2</subid>
+            <subacctype>2</subacctype>
+            <effecttime>2011-03-21T00:00:00</effecttime>
+            <expiretime>2099-03-21T00:00:00</expiretime>
+            <establishtime>2011-03-21T09:30:00</establishtime>
+            <updatetime>2006-03-21T09:30:00</updatetime>
+        </rcd>
+    </data>
+</sdbx>

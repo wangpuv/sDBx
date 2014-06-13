@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp2 (http://www.altova.com) by Administrator (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="sdbx">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="type" type="xs:string" fixed="SS"/>
+				<xs:element name="province">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:enumeration value="100"/>
+							<xs:enumeration value="200"/>
+							<xs:enumeration value="210"/>
+							<xs:enumeration value="220"/>
+							<xs:enumeration value="230"/>
+							<xs:enumeration value="240"/>
+							<xs:enumeration value="250"/>
+							<xs:enumeration value="270"/>
+							<xs:enumeration value="280"/>
+							<xs:enumeration value="290"/>
+							<xs:enumeration value="311"/>
+							<xs:enumeration value="351"/>
+							<xs:enumeration value="371"/>
+							<xs:enumeration value="431"/>
+							<xs:enumeration value="451"/>
+							<xs:enumeration value="471"/>
+							<xs:enumeration value="531"/>
+							<xs:enumeration value="551"/>
+							<xs:enumeration value="571"/>
+							<xs:enumeration value="591"/>
+							<xs:enumeration value="731"/>
+							<xs:enumeration value="771"/>
+							<xs:enumeration value="791"/>
+							<xs:enumeration value="851"/>
+							<xs:enumeration value="871"/>
+							<xs:enumeration value="891"/>
+							<xs:enumeration value="898"/>
+							<xs:enumeration value="931"/>
+							<xs:enumeration value="951"/>
+							<xs:enumeration value="971"/>
+							<xs:enumeration value="991"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="createtime" type="xs:dateTime"/>
+				<xs:element name="sum" type="xs:integer"/>
+				<xs:element name="begintime" type="xs:dateTime"/>
+				<xs:element name="endtime" type="xs:dateTime"/>
+				<xs:element name="data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="rcd" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="seq" type="xs:integer"/>
+										<xs:element name="mainacc">
+											<xs:simpleType>
+												<xs:restriction base="NonZeroLenString">
+													<xs:maxLength value="64"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="mainid">
+											<xs:simpleType>
+												<xs:restriction base="NonZeroLenString">
+													<xs:maxLength value="256"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="subacc">
+											<xs:simpleType>
+												<xs:restriction base="NonZeroLenString">
+													<xs:maxLength value="64"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="subid">
+											<xs:simpleType>
+												<xs:restriction base="NonZeroLenString">
+													<xs:maxLength value="256"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="subacctype">
+											<xs:simpleType>
+												<xs:restriction base="xs:integer">
+													<xs:enumeration value="1"/>
+													<xs:enumeration value="2"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="effecttime" type="xs:dateTime"/>
+										<xs:element name="expiretime" type="xs:dateTime"/>
+										<xs:element name="establishtime" type="xs:dateTime"/>
+										<xs:element name="updatetime" type="xs:dateTime"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="NonZeroLenString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.blue.org"
+           xmlns="http://www.blue.org"
+           attributeFormDefault="unqualified" elementFormDefault="qualified">
+    <xs:element name="configuration" type="configuration"/>
+    <xs:complexType name="params">
+        <xs:sequence>
+            <xs:element type="param" name="param"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="configuration">
+        <xs:sequence>
+            <xs:element type="db" name="db">
+                <xs:annotation>
+                    <xs:documentation>数据库相关配置</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="name"/>
+    </xs:complexType>
+    <xs:complexType name="method">
+        <xs:sequence>
+            <xs:element type="xs:string" name="name">
+                <xs:annotation>
+                    <xs:documentation>方法名</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element type="params" name="params">
+                <xs:annotation>
+                    <xs:documentation>参数定义</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="mapper">
+        <xs:sequence>
+            <xs:element type="element" name="element" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="namespace"/>
+    </xs:complexType>
+    <xs:complexType name="db">
+        <xs:sequence>
+            <xs:element type="mapper" name="mapper">
+                <xs:annotation>
+                    <xs:documentation>xml对象属性对应sql查询结果的列</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="type"/>
+        <xs:attribute type="xs:string" name="sql"/>
+    </xs:complexType>
+    <xs:complexType name="element">
+        <xs:sequence>
+            <xs:element name="column" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="row_num"/>
+                        <xs:enumeration value="main_acct_id"/>
+                        <xs:enumeration value="login_name"/>
+                        <xs:enumeration value="user_name"/>
+                        <xs:enumeration value="valid"/>
+                        <xs:enumeration value="lock_status"/>
+                        <xs:enumeration value="acct_type"/>
+                        <xs:enumeration value="effect_time"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element type="xs:string" name="handler" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>在sql查询结果中没有的，需要定义Handler和method单独进行处理</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element type="method" name="method" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="param">
+        <xs:sequence>
+            <xs:element type="xs:string" name="value">
+                <xs:annotation>
+                    <xs:documentation>参数类型都是String</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdbx>
+    <type>AA</type>
+    <province>100</province>
+    <createtime>2011-04-05T06:16:20</createtime>
+    <sum>1</sum>
+    <begintime>2011-03-01T00:00:00</begintime>
+    <endtime>2011-04-01T00:00:00</endtime>
+    <data>
+        <rcd>
+            <seq>1</seq>
+            <mainacctid>1234567890</mainacctid>
+            <loginname>test</loginname>
+            <username>test</username>
+            <valid>1</valid>
+            <lockstatus>0</lockstatus>
+            <accttype>6</accttype>
+            <rolelist>test</rolelist>
+            <effecttime>2011-03-21T00:00:00</effecttime>
+            <expiretime>2099-03-21T00:00:00</expiretime>
+            <establishtime>2011-03-21T09:30:00</establishtime>
+            <areaid>A01</areaid>
+            <orgid>A0101</orgid>
+            <orgname>某机构</orgname>
+            <updatetime>2011-03-21T09:30:00</updatetime>
+            <superuser>0</superuser>
+            <opendays>30</opendays>
+            <logondays>30</logondays>
+            <usage>1</usage>
+        </rcd>
+    </data>
+    <user>
+        error
+    </user>
+</sdbx>

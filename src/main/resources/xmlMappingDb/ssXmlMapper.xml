@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://www.blue.org"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.blue.org ../xsd/configuration.xsd"
+               name="ss">
+    <!-- 数据库相关配置 -->
+    <db type="sdbx"
+        sql="SELECT rownum as ROW_NUM, MAIN_ACCT_ID, LOGIN_NAME, USER_NAME, VALID, LOCK_STATUS, ACCT_TYPE, EFFECT_TIME FROM SDBX_MAIN_ACCT T">
+        <!-- xml对象属性对应sql查询结果的列 -->
+        <mapper namespace="org.blue.sdbx.xsd.ss.Sdbx">
+            <element name="seq">
+                <column>row_num</column>
+            </element>
+            <element name="mainacc">
+                <column>main_acct_id</column>
+            </element>
+            <element name="mainid">
+                <column>login_name</column>
+            </element>
+            <element name="subacc">
+                <column>user_name</column>
+            </element>
+            <element name="subid">
+                <column>valid</column>
+            </element>
+            <element name="subacctype">
+                <column>acct_type</column>
+            </element>
+            <element name="effecttime">
+                <column>effect_time</column>
+            </element>
+        </mapper>
+    </db>
+</configuration>

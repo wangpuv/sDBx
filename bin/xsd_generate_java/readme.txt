@@ -1,0 +1,1 @@
+在windows系统下可以执行这些bat命令来生成java类
